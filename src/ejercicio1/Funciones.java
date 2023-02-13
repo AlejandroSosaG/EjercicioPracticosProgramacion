@@ -45,20 +45,19 @@ public class Funciones {
     public static void destapar(String[] casillas){
         int num;
         int cont  = 0;
-        String respuesta = "";
+        String[] respuesta = new String[20];
         Scanner sc = new Scanner(System.in);
         while (cont!=14){
             System.out.println("Introduzca la casilla que desea destapar");
             num = sc.nextInt();
-            respuesta = casillas[num-1];
+            respuesta[num-1] = casillas[num-1];
             System.out.println(respuesta);
             if (respuesta.equals("*")){
                 break;
             }else cont++;
         }
         if (cont==14){
-            respuesta = "Ha ganado";
-        }else respuesta = "Ha perdido";
-        System.out.println(respuesta);
+            System.out.println("Ha ganado");
+        }else System.out.println("Ha perdido");
     }
 }
